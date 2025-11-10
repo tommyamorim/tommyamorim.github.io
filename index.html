@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-researcher">
+<!-- Alterado para theme-academic -->
+<html lang="en" class="theme-academic">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Tomaz Amorim - Literary Researcher | Principal Investigator</title>
+    <!-- Título atualizado -->
+    <title>Dr. Tomaz Amorim - Literary Academic | Principal Investigator</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Montserrat (Headings) & Noto Serif (Body) -->
@@ -33,8 +35,9 @@
             transition: all 0.3s ease;
         }
 
-        /* --- MODO "RESEARCHER" (LIGHT/INFRASTRUCTURE) --- */
-        .theme-researcher {
+        /* --- MODO "ACADEMIC" (LIGHT/INFRASTRUCTURE) --- */
+        /* Renomeado de theme-researcher para theme-academic */
+        .theme-academic {
             --bg-color: #f8fafc; /* slate-50 */
             --text-color: #1e293b; /* slate-800 */
             --text-muted-color: #475569; /* slate-600 */
@@ -43,23 +46,23 @@
             --border-color: #cbd5e1; /* slate-300 */
             --bg-switch: #ffffff; /* white */
         }
-        .theme-researcher body {
+        .theme-academic body {
             /* NOVO FUNDO: Imagem personalizada (fundo.jpeg) com cache-busting */
             background-image: url('images/fundo.jpeg?v=1.1');
             background-repeat: repeat;
         }
-        .theme-researcher .focus-switch {
+        .theme-academic .focus-switch {
             background-color: var(--bg-switch);
             border-color: var(--border-color);
         }
-        .theme-researcher .focus-switch-btn.active {
+        .theme-academic .focus-switch-btn.active {
             background-color: var(--accent-color);
             color: #ffffff;
         }
-        .theme-researcher .focus-switch-btn:not(.active) {
+        .theme-academic .focus-switch-btn:not(.active) {
             color: var(--text-muted-color);
         }
-        .theme-researcher .news-marker {
+        .theme-academic .news-marker {
             color: var(--accent-color);
         }
 
@@ -74,7 +77,9 @@
             --bg-switch: #0f172a; /* slate-900 */
         }
         .theme-society body {
-             background-image: none;
+             /* NOVO FUNDO: Imagem personalizada (fundo-society.png) com cache-busting */
+             background-image: url('images/fundo-society.png?v=1.1');
+             background-repeat: repeat;
         }
         .theme-society .focus-switch {
             background-color: var(--bg-switch);
@@ -232,22 +237,25 @@
             <div>
                 <h1 class="text-3xl font-bold">Dr. Tomaz Amorim</h1>
                 <p class="text-lg" style="color: var(--text-muted-color);">
-                    Literary Researcher | Principal Investigator
+                    <!-- Título atualizado -->
+                    Literary Academic | Principal Investigator
                 </p>
             </div>
             
             <!-- O INTERRUPTOR (Focus Switch) -->
             <div id="focus-toggle" class="focus-switch">
-                <button id="btn-researcher" class="focus-switch-btn active">Researcher</button>
+                <!-- Renomeado para "Academic" e "btn-academic" -->
+                <button id="btn-academic" class="focus-switch-btn active">Academic</button>
                 <button id="btn-society" class="focus-switch-btn">Society</button>
             </div>
         </header>
 
         <main>
             <!-- ============================================= -->
-            <!-- CONTEÚDO 1: MODO "RESEARCHER" (INFRASTRUCTURE) -->
+            <!-- CONTEÚDO 1: MODO "ACADEMIC" (INFRASTRUCTURE) -->
             <!-- ============================================= -->
-            <div id="content-researcher" class="space-y-12">
+            <!-- Renomeado para "content-academic" -->
+            <div id="content-academic" class="space-y-12">
 
                 <!-- Seção: Sobre (Bio + Foto) -->
                 <section class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -435,7 +443,10 @@
                                 <div class="flex flex-col flex-1 h-full">
                                     <h3 class="text-xl font-bold">Introdução à obra de Franz Kafka</h3>
                                     <p class="text-sm my-2">[Undergraduate full course taught at Unicamp on Kafka]</p>
-                                    <!-- <a href="#" class="mt-auto sm:mt-2">Learn more &rarr;</a> -->
+                                    <!-- LINK DO PODCAST KAFKA ADICIONADO -->
+                                    <a href="https://open.spotify.com/show/5szWrcT6ez7KRXqNA7UXwO" target="_blank" rel="noopener" class="mt-auto sm:mt-2">
+                                        Listen on Spotify &rarr;
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -615,9 +626,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.getElementById('focus-toggle');
-            const btnResearcher = document.getElementById('btn-researcher');
+            // Renomeado para btn-academic
+            const btnAcademic = document.getElementById('btn-academic');
             const btnSociety = document.getElementById('btn-society');
-            const contentResearcher = document.getElementById('content-researcher');
+            // Renomeado para content-academic
+            const contentAcademic = document.getElementById('content-academic');
             const contentSociety = document.getElementById('content-society');
             const htmlElement = document.documentElement;
 
@@ -626,36 +639,37 @@
                 if (mode === 'society') {
                     // Ativar Modo "Society" (Dark/Care)
                     htmlElement.classList.add('theme-society');
-                    htmlElement.classList.remove('theme-researcher');
+                    htmlElement.classList.remove('theme-academic');
                     
                     btnSociety.classList.add('active');
-                    btnResearcher.classList.remove('active');
+                    btnAcademic.classList.remove('active');
                     
                     contentSociety.classList.remove('hidden');
-                    contentResearcher.classList.add('hidden');
+                    contentAcademic.classList.add('hidden');
                     
                     localStorage.setItem('focusMode', 'society');
                 } else {
-                    // Ativar Modo "Researcher" (Light/Infrastructure)
-                    htmlElement.classList.add('theme-researcher');
+                    // Ativar Modo "Academic" (Light/Infrastructure)
+                    htmlElement.classList.add('theme-academic');
                     htmlElement.classList.remove('theme-society');
 
-                    btnResearcher.classList.add('active');
+                    btnAcademic.classList.add('active');
                     btnSociety.classList.remove('active');
 
-                    contentResearcher.classList.remove('hidden');
+                    contentAcademic.classList.remove('hidden');
                     contentSociety.classList.add('hidden');
                     
-                    localStorage.setItem('focusMode', 'researcher');
+                    localStorage.setItem('focusMode', 'academic');
                 }
             }
 
             // Adiciona os event listeners aos botões
-            btnResearcher.addEventListener('click', () => applyFocus('researcher'));
+            btnAcademic.addEventListener('click', () => applyFocus('academic'));
             btnSociety.addEventListener('click', () => applyFocus('society'));
 
             // Verifica o modo salvo no localStorage ao carregar a página
-            const savedMode = localStorage.getItem('focusMode') || 'researcher';
+            // Alterado para 'academic' como padrão
+            const savedMode = localStorage.getItem('focusMode') || 'academic';
             applyFocus(savedMode);
 
             // Atualiza o ano no rodapé
