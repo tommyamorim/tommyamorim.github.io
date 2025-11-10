@@ -579,25 +579,27 @@
                     <h2 class="text-2xl font-bold border-b pb-2 mb-6" style="border-color: var(--border-color);">Poetry</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         
-                        <!-- Livro 1: Marte atacado (THUMBNAIL AUTOMÁTICA) -->
-                        <!-- CORREÇÃO: Adicionado 'h-full' ao content-card -->
-                        <a href="https://www.youtube.com/watch?v=AuSN47Ueec0" 
-                           class="content-card media-card group cursor-pointer js-video-modal-trigger h-full"
-                           data-video-id="AuSN47Ueec0"
-                           target="_blank" rel="noopener">
-                            <!-- Div de imagem atualizada -->
-                            <div class="media-card-image media-card-image-book"> <!-- Proporção de capa de livro -->
+                        <!-- Livro 1: Marte atacado (CORRIGIDO PARA DIV) -->
+                        <!-- MUDANÇA: A tag <a> externa foi trocada por uma <div> -->
+                        <div class="content-card media-card group h-full">
+                            <!-- A tag <a> agora envolve apenas a imagem e é o gatilho do modal -->
+                            <a href="https://www.youtube.com/watch?v=AuSN47Ueec0" 
+                               class="media-card-image media-card-image-book block cursor-pointer js-video-modal-trigger" <!-- 'block' adicionado -->
+                               data-video-id="AuSN47Ueec0"
+                               target="_blank" rel="noopener">
+                                <!-- Div de imagem atualizada -->
                                 <!-- THUMBNAIL AUTOMÁTICA DO YOUTUBE -->
                                 <img src="https://img.youtube.com/vi/AuSN47Ueec0/hqdefault.jpg" alt="Marte atacado video poem thumbnail" class="w-full h-full object-cover">
                                 <div class="play-icon">
                                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
                                 </div>
-                            </div>
+                            </a>
                             <h3 class="text-lg font-bold italic mt-auto">"Marte atacado"</h3> <!-- mt-auto empurra o texto para baixo -->
                             <p class="text-sm my-2">
+                                <!-- Este link agora é válido e não está mais aninhado -->
                                 (<a href="[PLACEHOLDER: Mormaço Editora URL]" target="_blank" rel="noopener" class="hover:underline">Mormaço</a>, 2023)
                             </p>
-                        </a>
+                        </div> <!-- Fim da <div> corrigida -->
 
                         <!-- Livro 2: Meia lua soco -->
                         <!-- CORREÇÃO: Adicionado 'h-full' ao content-card -->
